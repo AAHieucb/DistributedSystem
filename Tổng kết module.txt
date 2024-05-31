@@ -446,6 +446,7 @@ Nw (Write Quorum): Số lượng replicas tối thiểu cần ghi để xem xét
 - Nr+Nw>N tránh xung đột đọc ghi vì luôn có 1 bản ghi có data mới nhất theo nguyên lý chuồng bồ câu
 - Nw>N/2 để tránh xung đột ghi ghi vì bản ghi mới nhất sẽ chiếm > 50% db so với các bản ghi cũ
 VD có 50 data thì Nw có 26 cái, Nr có 25 cái sẽ thỏa mãn Nr + Nw > N và Nw > N/2
+Nếu đọc sẽ phải đọc mọi replica trong quorum để lấy data. Các replica cũ có thể update data mới thông qua chạy nền (k cần ưu tiên), hoặc mỗi lần đọc sẽ check và update nếu cần.
 
 
 
